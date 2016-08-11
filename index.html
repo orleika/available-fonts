@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Available Fonts</title>
+</head>
+
+<body>
+  <script src="src/available-fonts.js"></script>
+  <script>
+    (function() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var testFonts = JSON.parse(xhr.responseText).testFonts;
+          document.body.appendChild(document.createTextNode(availableFonts(testFonts).join(', ')));
+        }
+      };
+      xhr.open('GET', 'test-fonts.json');
+      xhr.send();
+    }())
+  </script>
+</body>
+
+</html>

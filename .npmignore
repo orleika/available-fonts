@@ -1,0 +1,7 @@
+node_modules/
+test/
+.editorconfig
+.eslintrc
+.gitignore
+circle.yml
+CANDIDATE
